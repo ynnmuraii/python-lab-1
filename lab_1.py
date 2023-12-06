@@ -53,3 +53,18 @@ def download_img(request: str) -> None:
             except:
                 continue
     print(f'{count} успешно скачано')
+
+def main() -> None:
+    if os.path.isdir("dataset"):
+        shutil.rmtree("dataset")
+    if os.path.isdir("__pycache__"):
+        shutil.rmtree("__pycache__")
+
+    number_of_request = 1000
+    request = "leopard"
+    get_hyperlinks(request, number_of_request)
+    download_img(request)
+
+    request = "tiger"
+    get_hyperlinks(request, number_of_request)
+    download_img(request)
