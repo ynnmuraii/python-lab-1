@@ -61,7 +61,7 @@ def main() -> None:
     if os.path.isdir("__pycache__"):
         shutil.rmtree("__pycache__")
 
-    number_of_request = 1000
+    number_of_request = 10
     request = "leopard"
     get_hyperlinks(request, number_of_request)
     download_img(request)
