@@ -16,6 +16,7 @@ def get_hyperlinks(request: str, quantity: int) -> None:
     driver = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()))
     url = f"https://yandex.ru/images/search?text={request}"
     driver.get(url=url)
+    driver.maximize_window()
     time.sleep(5)
     driver.find_element(By.CSS_SELECTOR, "a.Link.SimpleImage-Cover").click()
 
